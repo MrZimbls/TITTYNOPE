@@ -39,12 +39,21 @@ client.on('message', async message =>{
     if(command === 'moveback'){
         if(message.member.roles.cache.some(r => r.name === "BotAcces")){
             console.log('admin comand executed!');
-
             client.commands.get('moveback').execute(message, Discord, client)
         }
         else {
             console.log('not correkt role');
-            message.channel.send('Missing Privileges');
+            message.channel.send('Missing Privileges / Contact Zimbls or Izayoi!');
+        }
+    }
+    if(command === 'randteams'){
+        if(message.member.roles.cache.some(r => r.name === "BotAcces")){
+            console.log('admin comand executed!');
+            client.commands.get('randteams').execute(message, Discord, client)
+        }
+        else {
+            console.log('not correkt role');
+            message.channel.send('Missing Privileges / Contact Zimbls or Izayoi!');
         }
     }
     if(command === 'welcomemessage'){
@@ -56,7 +65,6 @@ client.on('message', async message =>{
             .then(function (msgEmbed) {
                 msgEmbed.react("🤩")
             }).catch(function() {
-                //Something
             });
     }
 });
