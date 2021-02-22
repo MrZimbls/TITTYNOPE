@@ -1,3 +1,6 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 const Discord = require('discord.js');
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 
@@ -106,6 +109,4 @@ client.on('messageReactionRemove', async (reaction, user) => {
     }
 });
 
-
-bot_secret_token = "ODEzMTE4MjIzNDYxMjUzMTUx.YDKpWw.ZSrhS1pYM5t4htFsUJM138oLwVU";
-client.login(bot_secret_token);
+client.login(process.env.BOT_TOKEN);
