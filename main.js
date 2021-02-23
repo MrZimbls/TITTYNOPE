@@ -39,6 +39,9 @@ client.on('message', async message =>{
     if(command === 'ping'){
         client.commands.get('ping').execute(message, args);
     }
+    if(command === 'mchannel'){
+        client.commands.get('mchannel').execute(message, Discord, client, args);
+    }
     if(command === 'moveback'){
         if(message.member.roles.cache.some(r => r.name === "BotAcces")){
             console.log('admin comand executed!');
