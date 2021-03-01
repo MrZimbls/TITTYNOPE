@@ -62,6 +62,9 @@ client.on('message', async message =>{
             message.channel.send('Missing Privileges / Contact Zimbls or Izayoi!');
         }
     }
+    if(command === 'music'){
+        client.commands.get('music').execute(message, Discord, client, args);
+    }
     if(command === 'welcomemessage'){
         let embed = new Discord.MessageEmbed()
             .setTitle('Welcome to the Madness')
